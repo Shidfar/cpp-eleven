@@ -24,6 +24,6 @@ int main() {
 
     for(vector<string>::iterator i=strings.begin(); i!=strings.end(); i++)
         cout <<*i <<endl;
-    
+
     return 0;
 }
