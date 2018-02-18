@@ -31,7 +31,6 @@ int main() {
 //        cout << it->first << " : " << it->second <<endl;
 //    }
 
-    
     for (auto& it : ages) {                 // Range based loop (c++11)++
         cout << it.first << " : " << it.second <<endl;
     }
