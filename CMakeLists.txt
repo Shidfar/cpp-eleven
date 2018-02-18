@@ -3,5 +3,5 @@ project(C__11)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vector.cpp)
+set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vectors.cpp stl/lists.cpp stl/maps.cpp)
 add_executable(C__11 ${SOURCE_FILES})

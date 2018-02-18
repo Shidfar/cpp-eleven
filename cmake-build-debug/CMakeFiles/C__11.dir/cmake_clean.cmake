@@ -2,7 +2,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/C__11.dir/main.cpp.o"
   "CMakeFiles/C__11.dir/parsing-txt/main.cpp.o"
   "CMakeFiles/C__11.dir/structs-padding/main.cpp.o"
-  "CMakeFiles/C__11.dir/stl/vector.cpp.o"
+  "CMakeFiles/C__11.dir/stl/vectors.cpp.o"
+  "CMakeFiles/C__11.dir/stl/lists.cpp.o"
+  "CMakeFiles/C__11.dir/stl/maps.cpp.o"
   "C__11.pdb"
   "C__11"
 )

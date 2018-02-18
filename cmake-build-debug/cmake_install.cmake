@@ -1,4 +1,4 @@
-# Install script for directory: /Users/shidfar/judge-13/CPP/C++11
+# Install script for directory: /Users/shidfar/judge-13/CPP/cpp-eleven
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/shidfar/judge-13/CPP/C++11/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/shidfar/judge-13/CPP/cpp-eleven/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
