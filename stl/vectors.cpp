@@ -71,11 +71,15 @@ void grid_vector() {
         cout <<endl;
     }
 }
+void sorting_vectors() {
+
+}
 int main() {
 
 //    vectors1();
 //    vectors2();
-    grid_vector();
+//    grid_vector();
+    sorting_vectors();
     return 0;
 }
 
