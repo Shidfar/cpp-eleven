@@ -3,5 +3,5 @@ project(C__11)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vectors.cpp stl/lists.cpp stl/maps.cpp stl/obj_in_maps.cpp stl/multimaps.cpp stl/sets.cpp stl/stack_queues.cpp stl/other_data_types.cpp operator-overloading/overloading.cpp operator-overloading/complex_numbers.cpp)
+set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vectors.cpp stl/lists.cpp stl/maps.cpp stl/obj_in_maps.cpp stl/multimaps.cpp stl/sets.cpp stl/stack_queues.cpp stl/other_data_types.cpp operator-overloading/overloading.cpp operator-overloading/complex_numbers.cpp operator-overloading/Complex.cpp operator-overloading/Complex.h)
 add_executable(C__11 ${SOURCE_FILES})
