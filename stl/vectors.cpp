@@ -6,6 +6,30 @@
 #include <vector>
 using namespace std;
 
+class Test {
+    int id;
+    string name;
+public:
+    Test(int id, string name): id(id), name(name) {}
+
+    void print() {
+        cout << id <<": " << name << endl;
+    }
+
+    /*bool operator<(const Test& other) const {
+        if (name == other.name) {
+            return id < other.id;
+        } else {
+            return name < other.name;
+        }
+    }*/
+    friend bool comp(const Test &a, const Test &b);
+};
+
+bool comp(const Test &a, const Test &b) {
+    return a.name < b.name;
+}
+
 void vectors1() {
     cout <<" ## vectors 1" <<endl;
 //    vector<string> strings(5);
@@ -32,6 +56,7 @@ void vectors1() {
     for(auto i=strings.begin(); i!=strings.end(); i++)
         cout << *i <<endl;
 }
+
 void vectors2() {
     cout <<" ## vectors 2" <<endl;
     vector<double> numbers(0); // <- (20, 1) will make all the values = 1
@@ -55,6 +80,7 @@ void vectors2() {
     cout <<"Size: " <<numbers.size() <<endl;
     cout << "Capacity: " <<numbers.capacity() <<endl;
 }
+
 void grid_vector() {
     vector< vector <int> > grid(3, vector<int>(4, -1));
     grid[1].push_back(0);  // <- makes one row longer than the others...
@@ -71,9 +97,22 @@ void grid_vector() {
         cout <<endl;
     }
 }
-void sorting_vectors() {
 
+void sorting_vectors() {
+    vector<Test> tests;
+
+    tests.push_back(Test(5, "Mike"));
+    tests.push_back(Test(10, "Sue"));
+    tests.push_back(Test(7, "Raj"));
+    tests.push_back(Test(3, "Vicky"));
+
+    sort(tests.begin(), tests.end(), comp);
+
+    for(int i=0; i<tests.size(); i++) {
+        tests[i].print();
+    }
 }
+
 int main() {
 
 //    vectors1();
@@ -83,4 +122,4 @@ int main() {
     return 0;
 }
 
-// clang++ -std=c++11 -stdlib=libc++ -Wall vectors.cpp -o vectors
+// c++ -std=c++11 -stdlib=libc++ -Wall vectors.cpp -o vectors
