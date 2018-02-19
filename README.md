@@ -8,7 +8,7 @@ with c++ and some beautiful new features that std=c++11 (++) brings us.
 Well this project does't do anything much just dummy codes.
 But if you want to run it (depending on your OS) you can do:
 
-#######mac/linux
+######mac/linux
 
 ```
 c++ -std=c++11 -stdlib=libc++ something.cpp Class.cpp -o executable
