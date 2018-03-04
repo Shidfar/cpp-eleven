@@ -5,19 +5,32 @@
 #include <iostream>
 using namespace std;
 
-struct MatchTest {
+struct Test {
+    virtual bool operator()(string &text) = 0;
+    virtual ~Test(){
+
+    }
+};
+
+struct MatchTest: public Test {
     bool operator()(string &text) {
         return text == "lion";
     }
 };
 
-void check(string text) {
-
+void check(string text, Test &test) {
+    if (test(text)) {
+        cout << "Text matches." << endl;
+    } else {
+        cout << "No match." << endl;
+    }
 }
 
 int main() {
     MatchTest pred;
     string val = "lion";
     cout << pred(val) << endl;
+    MatchTest m;
+    check("lion1", m);
     return 0;
 }
