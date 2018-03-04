@@ -31,12 +31,12 @@ public:
         }
 
         iterator &operator++() {
-            ++m_pos;
+            m_pos++;
             return *this;
         }
 
         iterator &operator++(int) {
-            m_pos++;
+            ++m_pos;
             return *this;
         }
 
