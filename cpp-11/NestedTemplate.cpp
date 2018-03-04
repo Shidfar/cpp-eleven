@@ -17,15 +17,17 @@ void NestedTemplate::run() {
     text_ring.add("three");
     text_ring.add("four");
 
-    for(int i=0; i<text_ring.size(); i++) {
-        cout << text_ring.get(i) << endl;
+//    for(int i=0; i<text_ring.size(); i++) {
+//        cout << text_ring.get(i) << endl;
+//    }
+
+    for(ring<string>::iterator it=text_ring.begin(); it!=text_ring.end(); it++) {
+        cout << *it << " ";
     }
-//    for(auto it=text_ring.begin(); it!=text_ring.end(); it++) {
-//        cout << *it << endl;
-//    }
-//    cout << endl;
-//
-//    for(string value: text_ring) {
-//        cout << value << endl;
-//    }
+    cout << endl;
+
+    for(const string &value: text_ring) {
+        cout << value << " ";
+    }
+    cout << endl;
 }

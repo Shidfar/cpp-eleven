@@ -22,14 +22,32 @@ public:
         int m_pos;
         ring m_ring;
     public:
-        iterator(int pos, ring &_ring): m_pos(pos), m_ring(_ring) {
+        iterator(int pos, ring &n_ring):
+                m_pos(pos), m_ring(n_ring) {
+        }
 
+        ~iterator() {
+            m_ring = *new ring(0);
+        }
+
+        iterator &operator++() {
+            ++m_pos;
+            return *this;
         }
 
         iterator &operator++(int) {
             m_pos++;
             return *this;
         }
+
+        bool operator!=(const iterator &other) const {
+            return m_pos != other.m_pos;
+        }
+
+        T &operator*() {
+            return m_ring.get(m_pos);
+        }
+
         void print();
         void inform();
     };
@@ -45,7 +63,7 @@ public:
     }
 
     ~ring() {
-        delete [] m_values;
+        delete []m_values;
     }
 
     int size() {
