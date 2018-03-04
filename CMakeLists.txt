@@ -3,5 +3,5 @@ project(C__11)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vectors.cpp stl/lists.cpp stl/maps.cpp stl/obj_in_maps.cpp stl/multimaps.cpp stl/sets.cpp stl/stack_queues.cpp stl/other_data_types.cpp operator-overloading/overloading.cpp operator-overloading/complex_numbers.cpp operator-overloading/Complex.cpp operator-overloading/Complex.h templates/templates.cpp functions-to-functions/functions.cpp functions-to-functions/ObjectSlicing.cpp functions-to-functions/AbstractClass.cpp functions-to-functions/functors.cpp)
+set(SOURCE_FILES main.cpp parsing-txt/main.cpp structs-padding/main.cpp stl/vectors.cpp stl/lists.cpp stl/maps.cpp stl/obj_in_maps.cpp stl/multimaps.cpp stl/sets.cpp stl/stack_queues.cpp stl/other_data_types.cpp operator-overloading/overloading.cpp operator-overloading/complex_numbers.cpp operator-overloading/Complex.cpp operator-overloading/Complex.h templates/templates.cpp functions-to-functions/functions.cpp functions-to-functions/ObjectSlicing.cpp functions-to-functions/AbstractClass.cpp functions-to-functions/functors.cpp cpp-11/main.cpp cpp-11/Sugar.cpp cpp-11/Sugar.h cpp-11/NestedTemplate.cpp cpp-11/NestedTemplate.h cpp-11/ring.cpp cpp-11/ring.h)
 add_executable(C__11 ${SOURCE_FILES})
