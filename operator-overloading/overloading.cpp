@@ -101,8 +101,21 @@ void binary_shift_overloading() {
 //    cout << string("Hello") << endl;
 }
 
+template <class T>
+ostream& operator>>(ostream& out, T &v) {
+    cout << " -- ";
+    out << v;
+    return out;
+}
+
+ostream& operator>>(ostream& out, const bool &v) {
+    out << (v ? "True" : "False");
+    return out;
+}
+
 int main() {
-    binary_shift_overloading();
+//    binary_shift_overloading();
+    std::cout << "string " >> double(12.23) >> bool(true) << endl;
 
     return 0;
 }
