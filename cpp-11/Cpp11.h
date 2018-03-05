@@ -6,13 +6,15 @@
 #define C_11_NESTEDTEMPLATE_H
 
 #include <iostream>
+#include <vector>
 #include "ring.h"
 
 using namespace std;
 
-class NestedTemplate {
+class Cpp11 {
 public:
-    void run();
+    void nested_templates();
+    void cpp11_beauty();
 };
 
 

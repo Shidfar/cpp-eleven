@@ -4,7 +4,7 @@
 
 //#include "Sugar.h"
 #include <vector>
-#include "NestedTemplate.h"
+#include "Cpp11.h"
 
 void cpp98() {
     int values[] = {1, 4, 5};
@@ -45,8 +45,9 @@ int main() {
 //    s.run();
 //    s.c11auto();
 //    s.enhanced_for_loop();
-//    NestedTemplate nt;
-//    nt.run();
-    cpp98();
+    Cpp11 cpp11;
+//    cpp11.nested_templates();
+//    cpp98();
+    cpp11.cpp11_beauty();
     return 0;
 }
