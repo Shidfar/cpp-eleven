@@ -19,6 +19,7 @@ public:
     void initializer_list();
     void object_initialization();
     void lambda_functions();
+    void lambda_exp_parameters();
 };
 
 

@@ -131,3 +131,29 @@ void Cpp11::lambda_functions() {
     });
     cout << typeid(func).name() << endl;
 }
+
+void greet_test(void (*greet)(string)) {
+    greet("Bob");
+}
+
+void run_divide(double (*divide)(double a, double b)) {
+    cout << "value: " << divide(9, 3) << endl;
+}
+
+void Cpp11::lambda_exp_parameters() {
+    auto greet = [](string name) {
+        cout << "hello " << name << endl;
+    };
+    greet("Mike");
+    greet_test(greet);
+
+    auto pDivide = [](double a, double b) -> double {
+        if (b == 0.0) {
+            return 0;
+        }
+
+        return (a/b);
+    };
+    cout << pDivide(10.0, 0) << endl;
+    run_divide(pDivide);
+}

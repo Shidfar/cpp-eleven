@@ -51,6 +51,7 @@ int main() {
 //    cpp11.cpp11_beauty();
 //    cpp11.initializer_list();
 //    cpp11.object_initialization();
-    cpp11.lambda_functions();
+//    cpp11.lambda_functions();
+    cpp11.lambda_exp_parameters();
     return 0;
 }
