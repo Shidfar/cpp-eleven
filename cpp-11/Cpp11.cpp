@@ -4,6 +4,36 @@
 
 #include "Cpp11.h"
 
+class InitListTest {
+public:
+    InitListTest(initializer_list<string> texts) {
+        for(const auto &value: texts) {
+            cout << value << endl;
+        }
+    }
+    void print(initializer_list<string> texts) {
+        for(const auto &value: texts) {
+            cout << value << endl;
+        }
+    }
+};
+
+class ObjInitTest {
+    int id{3};
+    string name{"Mike"};
+public:
+    ObjInitTest() = default;
+    ObjInitTest(const ObjInitTest &other) = default; // | delete; // deleting the implicit constructor | using default
+    ObjInitTest &operator=(const ObjInitTest &other) = default;
+
+    explicit ObjInitTest(int _id): id(_id) {
+
+    }
+    void print() {
+        cout << id << ": " << name << endl;
+    }
+};
+
 void Cpp11::nested_templates() {
 //    ring<int>::iterator p;
 //    p.print();
@@ -67,4 +97,37 @@ void Cpp11::cpp11_beauty() {
 
     vector<string> strings{"one", "two", "three"};
     cout << strings[2] << endl;
+}
+
+void Cpp11::initializer_list() {
+    vector<int> numbers { 1, 2, 3, 4, 5 };
+    cout << numbers[2] << endl;
+    InitListTest test { "apple", "orange", "banana" };
+    test.print({"one", "two", "three", "four"});
+}
+
+void Cpp11::object_initialization() {
+    ObjInitTest test;
+    test.print();
+    ObjInitTest test1(77);
+    test1.print();
+
+    ObjInitTest test2 = test1; // ^ we are using the default for '=' operator
+    test2.print();
+}
+
+void lambda_test(void (*pFunc)()) {
+    pFunc();
+}
+
+void Cpp11::lambda_functions() {
+    auto func = [](){
+        cout << "Hello world" << endl;
+    };
+    func();
+    lambda_test(func);
+    lambda_test([](){
+       cout << "Hello again" << endl;
+    });
+    cout << typeid(func).name() << endl;
 }

@@ -48,6 +48,9 @@ int main() {
     Cpp11 cpp11;
 //    cpp11.nested_templates();
 //    cpp98();
-    cpp11.cpp11_beauty();
+//    cpp11.cpp11_beauty();
+//    cpp11.initializer_list();
+//    cpp11.object_initialization();
+    cpp11.lambda_functions();
     return 0;
 }
