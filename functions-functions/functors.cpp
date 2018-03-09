@@ -26,7 +26,7 @@ void check(string text, Test &test) {
     }
 }
 
-int main() {
+int functors() {
     MatchTest pred;
     string val = "lion";
     cout << pred(val) << endl;

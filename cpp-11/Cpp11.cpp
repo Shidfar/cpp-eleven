@@ -157,3 +157,132 @@ void Cpp11::lambda_exp_parameters() {
     cout << pDivide(10.0, 0) << endl;
     run_divide(pDivide);
 }
+
+void Cpp11::lambda_capture_exp() {
+    int one = 1;
+    int two = 2;
+    int three = 3;
+    // capture one and two by value
+    [one, two](){ cout << "Hello " << one <<", " << two << endl; }();  // <- valid code :)
+
+    // capture all local vars by value
+    [=](){ cout << "Hello " << one <<", " << two << endl; }();  // <- valid code :)
+
+    // capture all local vars by value but capture three by reference
+    [=, &three](){ three = 7; cout << "Hello " << one <<", " << two << endl; }();  // <- valid code :)
+    cout << three << endl;
+
+    // capture all local vars by reference
+    [&](){ three = 7; two = 8; cout << "Hello " << one <<", " << two << endl; }();  // <- valid code :)
+    cout << two << endl;
+
+    // capture all local vars by reference but two and three by value
+    [&, two, three](){ one = 9; cout << "Hello " << one <<", " << two << endl; }();  // <- valid code :)
+    cout << one << endl;
+}
+
+class LambdaTest {
+private:
+    int one{1};
+    int two{2};
+public:
+    void run() {
+        int three{3};
+        int four{4};
+        auto pLambda = [&, this](){
+            one = 111;
+            cout << one << endl;
+            cout << two << endl;
+            cout << three << endl;
+            cout << four << endl;
+        };
+        pLambda();
+    }
+};
+
+void Cpp11::lambda_capture_this() {
+    LambdaTest t;
+    t.run();
+}
+
+bool check(string &test) {
+    return test.size() == 3;
+}
+
+class Check {
+public:
+    bool operator()(string &test) {
+        return test.size() == 5;
+    }
+} check1;
+
+void run(function<bool(string&)> check) {
+    string test = "stars";
+    cout << check(test) << endl;
+}
+
+void Cpp11::function_types() {
+    int size = 5;
+    vector<string> vec{"one", "two", "three"};
+    cout << count_if(vec.begin(), vec.end(), [=](string test) {
+        return test.size() == size;
+    }) << endl;
+
+    cout << count_if(vec.begin(), vec.end(), check) << endl;
+
+    cout << count_if(vec.begin(), vec.end(), check) << endl;
+
+    cout << count_if(vec.begin(), vec.end(), check1) << endl;
+
+
+    auto lambda = [=](string test) {
+        return test.size() == size;
+    };
+
+    run(lambda);
+    run(check1);
+    run(check);
+
+    function<int(int, int)> add = [](int one, int two) {
+        return one + two;
+    };
+    cout << add(7, 3) << endl;
+}
+
+void Cpp11::mutable_lambda() {
+    int cats = 5;
+    [cats]() mutable {
+        cats = 8;
+        cout << cats << endl;
+    }();
+    cout << cats << endl;
+}
+
+class DelegateParent {
+    int dogs;
+    string text;
+public:
+    DelegateParent(): DelegateParent("hello") {
+        dogs = 3;
+        cout << "No parameter parent constructor" << endl;
+    };
+
+    DelegateParent(string text) {
+        cout << "String parent constructor" << endl;
+        dogs = 5;
+        this->text = text;
+    }
+};
+
+class DelegateChild: public DelegateParent {
+public:
+//    DelegateChild(): DelegateParent("hello") {
+//        cout << "No parameter child constructor" << endl;
+//    }
+    DelegateChild() = default;
+};
+
+void Cpp11::deligating_constructors() {
+    DelegateParent dParent("hello");
+    DelegateChild child;
+}

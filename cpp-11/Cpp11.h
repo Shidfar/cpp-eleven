@@ -8,6 +8,10 @@
 #include <iostream>
 #include <vector>
 #include <initializer_list>
+
+#include <functional>
+#include <algorithm>
+
 #include "ring.h"
 
 using namespace std;
@@ -20,6 +24,11 @@ public:
     void object_initialization();
     void lambda_functions();
     void lambda_exp_parameters();
+    void lambda_capture_exp();
+    void lambda_capture_this();
+    void function_types();
+    void mutable_lambda();
+    void deligating_constructors();
 };
 
 
