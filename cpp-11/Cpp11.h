@@ -12,6 +12,8 @@
 #include <functional>
 #include <algorithm>
 
+#include <memory>
+
 #include "ring.h"
 
 using namespace std;
@@ -29,6 +31,16 @@ public:
     void function_types();
     void mutable_lambda();
     void deligating_constructors();
+    void elision_n_optimization();
+    void r_value_references();
+    void move_constructor();
+    void move_assignment_operator();
+    void static_casts();
+    void dynamic_casts();
+    void reinterpret_casts();
+    void perfect_forwarding();
+    void binding();
+    void unique_ptrs();
 };
 
 

@@ -1,8 +1,8 @@
-CPPFLAGS = -O2 -std=c++11 -stdlib=libc++ -Wall # -DPOSX
+CPPFLAGS = -O2 -std=c++11 -stdlib=libc++ # -Wall # -DPOSX
 
 .cpp.o: ${CXX} $(CPPFLAGS) -c $< -o $@
 
-SOURCES = main.cpp ring.cpp Sugar.cpp Cpp11.cpp
+SOURCES = main.cpp ring.cpp Sugar.cpp Cpp11.cpp Cpp11Bind.cpp UniquePtrs.cpp
 EXECUTABLE = run
 OBJECTS = $(SOURCES:.cpp=.o)
 

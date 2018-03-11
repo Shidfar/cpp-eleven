@@ -57,6 +57,16 @@ int main() {
 //    cpp11.lambda_capture_this();
 //    cpp11.function_types();
 //    cpp11.mutable_lambda();
-    cpp11.deligating_constructors();
+//    cpp11.deligating_constructors();
+//    cpp11.elision_n_optimization();
+//    cpp11.r_value_references();
+//    cpp11.move_constructor();
+//    cpp11.move_assignment_operator();
+//    cpp11.static_casts();
+//    cpp11.dynamic_casts();
+//    cpp11.reinterpret_casts();
+//    cpp11.perfect_forwarding();
+//    cpp11.binding();
+    cpp11.unique_ptrs();
     return 0;
 }
