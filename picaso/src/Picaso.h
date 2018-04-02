@@ -38,7 +38,7 @@ namespace blackbox {
 
     public:
         Picaso(int width, int height);
-        void run(string filename);
+        void run(string &filename);
         void addRange(double rangeEnd, const RGB& rgb);
         void addZoom(const Zoom& zoom);
         virtual ~Picaso();
@@ -48,7 +48,7 @@ namespace blackbox {
         void calculateRangeTotals();
         void calculateTotalIterations();
         void drawFractal();
-        void writeBitmap(string filename);
+        void writeBitmap(string &filename);
         int getRange(int iterations) const;
     };
 }

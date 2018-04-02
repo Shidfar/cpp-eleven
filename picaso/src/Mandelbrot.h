@@ -8,7 +8,7 @@
 namespace blackbox {
     class Mandelbrot {
     public:
-        static const int MAX_ITERATIONS = 1000;
+        static const int MAX_ITERATIONS = 100000;
 
     public:
         Mandelbrot();

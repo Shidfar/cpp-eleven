@@ -13,7 +13,7 @@ namespace blackbox {
         _zoomList.add(Zoom((_width/2), _height/2, 4.0/_width));
     }
 
-    void Picaso::run(string filename) {
+    void Picaso::run(string &filename) {
         calculateIteration();
         calculateTotalIterations();
         calculateRangeTotals();
@@ -22,7 +22,7 @@ namespace blackbox {
     }
 
     void Picaso::addRange(double rangeEnd, const RGB &rgb) {
-        _ranges.push_back(rangeEnd * Mandelbrot::MAX_ITERATIONS);
+        _ranges.push_back((int) rangeEnd * Mandelbrot::MAX_ITERATIONS);
         _colors.push_back(rgb);
 
         if(_bGotFirstRange) {
@@ -38,7 +38,6 @@ namespace blackbox {
     void Picaso::calculateIteration() {
         for(int y = 0; y < _height; y++) {
             for(int x = 0; x < _width; x++) {
-//            _bitmap.setPixel(x, y, 0, 255, 255);
                 pair<double, double> coords = _zoomList.doZoom(x, y);
 
                 int iterations = Mandelbrot::getIterations(coords.first, coords.second);
@@ -71,9 +70,6 @@ namespace blackbox {
     }
 
     void Picaso::drawFractal() {
-//        RGB startColor(0, 0, 0);
-//        RGB endColor(0, 0, 255);
-//        RGB colorDiff = endColor - startColor;
         for(int y = 0; y < _height; y++) {
             for(int x = 0; x < _width; x++) {
                 int iterations = _fractal[y * _width + x];
@@ -110,7 +106,7 @@ namespace blackbox {
         }
     }
 
-    void Picaso::writeBitmap(string filename) {
+    void Picaso::writeBitmap(string &filename) {
         _bitmap.write(filename);
     }
 

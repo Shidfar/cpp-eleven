@@ -20,7 +20,7 @@ namespace blackbox {
     public:
         Bitmap(int width, int height);
         void setPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b);
-        bool write(string filename);
+        bool write(string &filename);
         virtual ~Bitmap();
     };
 }

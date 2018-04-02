@@ -14,7 +14,7 @@ namespace blackbox {
 //        memset(_pPixels.get(), 0, sizeof(uint8_t) * _width * _height * 3);
     }
 
-    bool Bitmap::write(string filename) {
+    bool Bitmap::write(string &filename) {
         BitmapInfoHeader infoHeader;
         BitmapFileHeader fileHeader;
 
