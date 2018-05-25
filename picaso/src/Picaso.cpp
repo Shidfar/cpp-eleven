@@ -110,8 +110,7 @@ namespace blackbox {
         _bitmap.write(filename);
     }
 
-    Picaso::~Picaso() {
-    }
+    Picaso::~Picaso() = default;
 
     int Picaso::getRange(int iterations) const {
         int range = 0;
@@ -127,4 +126,4 @@ namespace blackbox {
 
         return range;
     }
-}
+}  // blackbox namespace
